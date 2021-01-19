@@ -1,4 +1,4 @@
-package Lesson1;
+package com.tms.lesson1;
 
 public class FirstExercise {
   public static void main(String[] args) {
