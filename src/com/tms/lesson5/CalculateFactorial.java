@@ -4,15 +4,15 @@ package com.tms.lesson5;
 
 public class CalculateFactorial {
   public static void main(String[] args) {
-    int number = 10;
-    int factorial = number;
+    int number = (int) (Math.random() * 6 + 10);
+    int factorial = 1;
 
-    for (int i = 1; i <=5; i++) {
+    for (int i = 1; i <= number; i++) {
       System.out.println("Действие в проходе цикла №: " + i);
-      System.out.println("Число " + factorial + " умножаем на " + (++number));
-      factorial = factorial * number;
+      System.out.println("Число " + factorial + " умножаем на " + i);
+      factorial = factorial * i;
     }
 
-    System.out.println("Факториал от 10 до 15 равен: " + factorial);
+    System.out.println("Факториал числа " + number + " равен: " + factorial);
   }
 }
