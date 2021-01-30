@@ -4,30 +4,17 @@ package com.tms.lesson5;
 
 public class Butterfly {
   public static void main(String[] args) {
-    String[][] array = new String[5][5];
-    int average = array.length / 2;
+    String[][] array = new String[9][9];
 
-    for (int i = 0; i <= average; i++) {
-      for (int j = 0; j < i + 1; j++) {
-        array[i][j] = "*";
+    for (int i = 0; i < array.length / 2 + 1; i++) {
+      for (int j = i; j < array.length - i; j++) {
+        array[i][j] = "1";
       }
     }
 
-    for (int i = average; i < array.length; i++) {
-      for (int j = average - (i / 2); j > -1; j--) {
-        array[i][j] = "*";
-      }
-    }
-
-    for (int i = 0; i < average+1; i++) {
-      for (int j = array.length-1; j > average+1-i; j--) {
-        array[i][j] = "*";
-      }
-    }
-
-    for (int i = array.length - 1; i > average - 1; i--) {
-      for (int j = array.length - 1; j > i - 1; j--) {
-        array[i][j] = "*";
+    for (int i = array.length - 1; i > array.length / 2 - 1; i--) {
+      for (int j = i; j > array.length - i - 2; j--) {
+        array[i][j] = "1";
       }
     }
 
