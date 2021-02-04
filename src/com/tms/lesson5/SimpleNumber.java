@@ -8,7 +8,7 @@ public class SimpleNumber {
     int number = (int) (Math.random() * 999 + 1);
     boolean isSimple = true;
 
-    for (int i = 2; i < number / 2; i++) {
+    for (int i = 2; i < number / i; i++) {
       if (number % i == 0) {
         isSimple = false;
         break;
