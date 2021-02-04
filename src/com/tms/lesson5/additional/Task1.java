@@ -14,9 +14,10 @@ public class Task1 {
       if (i == 1) {
         distance = 10;
       } else {
-        distance = (float) Math.ceil((distance + ((distance * 10) / 100)) * rounding) / rounding;
+        distance += distance * 0.1;
+        distance = (float) Math.ceil(distance * rounding) / rounding;
       }
-      totalDistance +=distance;
+      totalDistance += distance;
       System.out.print("День: " + i + "й, ");
       System.out.println("расстояние: " + distance + "km");
     }
