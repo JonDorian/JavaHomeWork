@@ -4,18 +4,13 @@ package com.tms.lesson5.additional;
 
 public class Task3 {
   public static void main(String[] args) {
-    int pow = 2;
     int sum = 0;
-    int number = 1;
 
     System.out.print("Цифры(числа), которые будем складывать: ");
 
-    for (int i = 0; i <= 8; i++) {
-      if (i != 0) {
-        number *= pow;
-      }
-      sum += number;
-      System.out.print(number + " ");
+    for (int i = 1; i <= 256; i *= 2) {
+      sum += i;
+      System.out.print(i + " ");
     }
 
     System.out.println();
