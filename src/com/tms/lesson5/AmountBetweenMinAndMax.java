@@ -6,6 +6,11 @@ package com.tms.lesson5;
 public class AmountBetweenMinAndMax {
   public static void main(String[] args) {
     int[] array = new int[10];
+    byte minValue = 0;
+    byte minValueIndex = 0;
+    byte maxValue = 0;
+    byte maxValueIndex = 0;
+    boolean firstPass = true;
     int sum = 0;
 
     System.out.print("Исходный массив: ");
@@ -16,28 +21,34 @@ public class AmountBetweenMinAndMax {
 
     System.out.println(" ");
 
-    for (int one = 0; one < array.length - 1; one++) {
-      for (int two = 0; two < array.length - 1 - one; two++) {
-        if (array[two] > array[two + 1]) {
-          int temp = array[two];
-          array[two] = array[two + 1];
-          array[two + 1] = temp;
-        }
+    for (byte one = 0; one < array.length; one++) {
+      if (minValue == 0 & firstPass) {
+        minValue = (byte) array[one];
+        firstPass = false;
+      }
+      if (minValue > array[one]) {
+        minValue = (byte) array[one];
+        minValueIndex = one;
+      }
+      if (maxValue < array[one]) {
+        maxValue = (byte) array[one];
+        maxValueIndex = one;
       }
     }
 
-    System.out.print("Сортированный массив: ");
-    for (int x : array) {
-      System.out.print(x + " ");
+    System.out.println("Минимальное значение массива: " + minValue + " под индексом " + minValueIndex);
+    System.out.println("Максимальное значение массива: " + maxValue + " под индексом " + maxValueIndex);
+
+    if (minValueIndex < maxValueIndex) {
+      for (byte i = minValueIndex; i < maxValueIndex - 1; i++) {
+        sum += array[i + 1];
+      }
+      System.out.println("Cумма эллементов массива между " + array[minValueIndex] + " и " + array[maxValueIndex] + " равна: " + sum);
+    } else {
+      for (byte i = maxValueIndex; i < minValueIndex - 1; i++) {
+        sum += array[i + 1];
+      }
+      System.out.println("Cумма эллементов массива между " + array[maxValueIndex] + " и " + array[minValueIndex] + " равна: " + sum);
     }
-
-    System.out.println(" ");
-
-    for (int x = 1; x < array.length - 1; x++) {
-      sum += array[x];
-    }
-
-    System.out.println("Cумма эллементов массива между " + array[0] + " и " + array[array.length - 1] +
-            " равна: " + sum);
   }
 }
