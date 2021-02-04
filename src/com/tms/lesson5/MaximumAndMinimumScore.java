@@ -5,28 +5,38 @@ package com.tms.lesson5;
 
 public class MaximumAndMinimumScore {
   public static void main(String[] args) {
-    int[] scoreList = new int[10];
+    byte[] scoreList = new byte[10];
+    byte minValue = 0;
+    byte minValueIndex = 0;
+    byte maxValue = 0;
+    byte maxValueIndex = 0;
+    boolean firstPass = true;
 
     System.out.print("Исходеый список оценок: ");
 
     for (int i = 0; i < scoreList.length; i++) {
-      scoreList[i] = (int) (Math.random() * 20);
+      scoreList[i] = (byte) (Math.random() * 20);
       System.out.print(scoreList[i] + " ");
     }
 
     System.out.println(" ");
 
-    for (int first = 0; first < scoreList.length - 1; first++) {
-      for (int second = 0; second < scoreList.length - first - 1; second++) {
-        if (scoreList[second] > scoreList[second + 1]) {
-          int temp = scoreList[second];
-          scoreList[second] = scoreList[second + 1];
-          scoreList[second + 1] = temp;
-        }
+    for (byte one = 0; one < scoreList.length; one++) {
+      if (minValue == 0 & firstPass) {
+        minValue = scoreList[one];
+        firstPass = false;
+      }
+      if (minValue > scoreList[one]) {
+        minValue = scoreList[one];
+        minValueIndex = one;
+      }
+      if (maxValue < scoreList[one]) {
+        maxValue = scoreList[one];
+        maxValueIndex = one;
       }
     }
 
-    System.out.println("Минимальная оценка в списке: " + scoreList[0]);
-    System.out.println("Максимальная оценка в списке: " + scoreList[scoreList.length - 1]);
+    System.out.println("Минимальная оценка в списке: " + minValue + " под индексом " + minValueIndex);
+    System.out.println("Максимальная оценка в списке: " + maxValue + " под индексом " + maxValueIndex);
   }
 }
