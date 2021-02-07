@@ -1,28 +1,21 @@
 package com.tms.lesson6;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //Задание №20 из методички №2. Имеется строка с текстом. Вывести текст, составленный из последних букв всех слов.
 
 public class LastLetters {
   public static void main(String[] args) {
-    String text = "Мнеп зар этуи. разработкув - такуюе премиюе дадут!!!";
-    String lastLetterText = "";
-    char symbol;
+    String text = "Я уже неделю на работу хожу и не разу еще туда не пришел!";
+    StringBuilder lastLetterText = new StringBuilder();
 
-    for (int i = 0; i < text.length(); i++) {
-      symbol = text.charAt(i);
-      if (symbol != ' ' && symbol != '-' && symbol != '.' && symbol != '?' && symbol != '!') {
-        while (i <= text.length()) {
-          if (i == text.length()) {
-            lastLetterText += Character.toString(text.charAt(i - 2));
-            break;
-          } else if (symbol == ' ' || symbol == '-' || symbol == '.' || symbol == '?' || symbol == '!') {
-            lastLetterText += Character.toString(text.charAt(i - 2));
-            break;
-          }
-          symbol = text.charAt(i++);
-        }
-      }
+    Pattern pat = Pattern.compile("\\w\\b", Pattern.UNICODE_CHARACTER_CLASS);
+    Matcher match = pat.matcher(text);
+
+    while (match.find()) {
+      lastLetterText.append(match.group());
     }
-    System.out.print(lastLetterText);
+
+    System.out.println(lastLetterText);
   }
 }
