@@ -1,4 +1,5 @@
 package com.tms.lesson6;
+import java.util.StringTokenizer;
 
 //Задание №19 из методички №2. Имеется строка с текстом. Подсчитать количество слов в тексте.
 //Желательно учесть, что слова могут разделяться несколькими пробелами, в начале и конце
@@ -7,27 +8,14 @@ package com.tms.lesson6;
 public class WordsInText {
   public static void main(String[] args) {
     int numOfWords = 0;
-    char symbol;
-    String text = "  Впереди тяжелые времена, и нам всем придется выбирать между тем, что правильно, и тем, что легко.  ";
+    String text = "  Впереди тяжелые времена, и нам всем придется выбирать между тем, что правильно, и тем, что легко. ";
+    StringTokenizer findWords = new StringTokenizer(text, " -,.;:()!");
 
-    for (int i = 0; i < text.length(); i++) {
-      symbol = text.charAt(i);
-      if (symbol != ' ' & symbol != '-' & symbol != '.' & symbol != '?') {
-        while (i <= text.length()) {
-          if (i == text.length()) {
-            numOfWords++;
-            break;
-          } else if (symbol == ' ' | symbol == '-' | symbol == '.') {
-            numOfWords++;
-            i--;
-            break;
-          }
-          symbol = text.charAt(i++);
-        }
-      }
+    while (findWords.hasMoreTokens()) {
+      findWords.nextToken();
+      numOfWords++;
     }
 
-    System.out.println(text.length());
     System.out.println("Колличество слов в тексте: " + numOfWords);
   }
 }
