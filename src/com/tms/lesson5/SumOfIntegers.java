@@ -9,7 +9,7 @@ public class SumOfIntegers {
     int counter = 0;
     boolean runFind = true;
 
-    System.out.println("Укажите какое колличество чисел делящихся на 3 Вы хотите найти:");
+    System.out.println("Укажите какое количество чисел делящихся на 3 Вы хотите найти:");
     Scanner choiceQuantity = new Scanner(System.in);
     int quantityOfNumbers = choiceQuantity.nextInt();
 
