@@ -2,8 +2,8 @@ package com.tms.lesson10.aditionals.spacex;
 
 public class Spaceport {
   public static void main(String[] args) throws InterruptedException {
-    Starship starship = new Starship();
-    SpaceShuttle spaceShuttle = new SpaceShuttle();
+    IStart starship = new Starship();
+    IStart spaceShuttle = new SpaceShuttle();
 
     Spaceport.launchRocket(starship);
     Spaceport.launchRocket(spaceShuttle);
@@ -23,7 +23,7 @@ public class Spaceport {
       rocket.launch();
       System.out.println("В центре управления полетами NASA массовая оргия!!!!");
     } else {
-      System.out.println("Предстартовая проверка завершилась неудачей! В центре управления полетами NASA массовая драка! ");
+      System.out.println("Предстартовая проверка завершилась неудачей! В центре управления полетами NASA массовая драка!");
     }
     System.out.println();
   }

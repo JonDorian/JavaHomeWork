@@ -1,6 +1,6 @@
 package com.tms.lesson10.aditionals.transport;
 
-public class MilitaryAviation extends Air {
+public class MilitaryAviation extends AirTransport {
   private boolean ejectionSystem;
   private int numberOfRockets;
 

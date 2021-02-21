@@ -3,17 +3,19 @@ package com.tms.lesson10.task26;
 public class AppliancesRunner {
   public static void main(String[] args) {
     SomeTV lg = new SomeTV();
-    SomeTV samsung = new SomeTV("samsung", "серебристый", "IPS", 43);
+    SomeTV samsung = new SomeTV("samsung", "серебристый", "IPS", 43, true);
     SomeWashingMachine indesit = new SomeWashingMachine();
-    SomeWashingMachine bosh = new SomeWashingMachine("Bosh", "красная", 4, 1600);
+    SomeWashingMachine bosh = new SomeWashingMachine("Bosh", "красная", 4, 1600, true);
 
     lg.getDiagonal();
     lg.getScreenTechnology();
     lg.powerOn();
     lg.cannelNetx();
     lg.cannelPrev();
+    lg.getVoiceControl();
     lg.powerOn();
     lg.powerOf();
+
 
     System.out.println();
 
@@ -22,6 +24,7 @@ public class AppliancesRunner {
     samsung.powerOn();
     samsung.cannelNetx();
     samsung.cannelPrev();
+    samsung.getVoiceControl();
     samsung.powerOf();
     samsung.powerOf();
 
@@ -30,6 +33,7 @@ public class AppliancesRunner {
     bosh.powerOn();
     bosh.getPowerInWatts();
     bosh.getLoadingVolume();
+    bosh.getDelayedStart();
     bosh.spinningLinen();
     bosh.powerOf();
 
@@ -38,6 +42,7 @@ public class AppliancesRunner {
     indesit.powerOn();
     indesit.getPowerInWatts();
     indesit.getLoadingVolume();
+    indesit.getDelayedStart();
     indesit.spinningLinen();
     indesit.powerOf();
   }

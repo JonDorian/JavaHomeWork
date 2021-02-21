@@ -21,21 +21,58 @@ public class ATM {
   }
 
   public void addMoney(int par) {
-    switch (par) {
-      case 20:
-        System.out.println("Вы внесли 20 долларов!");
-        amountTwentyDollars++;
-        break;
-      case 50:
-        amountFiftyDollars++;
-        System.out.println("Вы внесли 50 долларов!");
-        break;
-      case 100:
-        amountOneHundredDollars++;
-        System.out.println("Вы внесли 100 долларов!");
-        break;
-      default:
-        System.out.println("Внесеная купюра не поддерживаемая банкоматом! Попробуйте внести другую купюру - 20, 50 или 100.");
+    if (par % 10 != 0 || par < 20 || (par > 20) & (par < 40)) {
+      System.out.println("Попытка внести сумму " + par + "$ завершилась неудачей! Попробуйте внести другую сумму!");
+    } else {
+      int tempNumOfTwenty = 0;
+      int tempNumOfFifty = 0;
+      int tempNumOfHundred = 0;
+      int numOfTwenty;
+      int numOfFifty;
+      int numOfHundred;
+
+      System.out.println("Сумма внесенная в банкомат: " + par + "$");
+
+      if (par % 100 == 10) {
+        tempNumOfFifty++;
+        tempNumOfTwenty += 3;
+        par -= 110;
+      } else if (par % 100 == 30) {
+        tempNumOfFifty++;
+        tempNumOfTwenty += 4;
+        par -= 130;
+      }
+
+      numOfHundred = par / 100;
+      if (numOfHundred > 0) {
+        tempNumOfHundred += numOfHundred;
+        par -= numOfHundred * 100;
+      }
+
+      numOfFifty = par / 50;
+      if (numOfFifty > 0) {
+        tempNumOfFifty += numOfFifty;
+        par -= numOfFifty * 50;
+      }
+
+      numOfTwenty = par / 20;
+      if (numOfTwenty > 0) {
+        tempNumOfTwenty += numOfTwenty;
+      }
+
+      if (tempNumOfHundred > 0) {
+        System.out.println(" - " + tempNumOfHundred * 100 + " долларов, купюрами наминалом 100: " + tempNumOfHundred + "шт.");
+      }
+      if (tempNumOfFifty > 0) {
+        System.out.println(" - " + tempNumOfFifty * 50 + " долларов, купюрами наминалом 50: " + tempNumOfFifty + "шт.");
+      }
+      if (tempNumOfTwenty > 0) {
+        System.out.println(" - " + tempNumOfTwenty * 20 + " долларов, купюрами наминалом 20: " + tempNumOfTwenty + "шт.");
+      }
+
+      amountTwentyDollars += tempNumOfTwenty;
+      amountFiftyDollars += tempNumOfFifty;
+      amountOneHundredDollars += tempNumOfHundred;
     }
     setTotalMoney();
   }
@@ -46,7 +83,7 @@ public class ATM {
 
   public void getTotalMoney() {
     setTotalMoney();
-    System.out.println("Общая сумма наличных в банкомате: " + totalMoney);
+    System.out.println("Общая сумма наличных в банкомате: " + totalMoney + "$");
   }
 
   public void getResult() {
@@ -68,7 +105,7 @@ public class ATM {
 
     int tempTwenty, tempFifty, tempHundred, residue;
 
-    System.out.println("Желаемая сумма выдачи наличных: " + withdrawalAmount);
+    System.out.println("Желаемая сумма выдачи наличных: " + withdrawalAmount + "$");
 
     if (withdrawalAmount > totalMoney || withdrawalAmount % 10 != 0 || withdrawalAmount < 20 || withdrawalAmount == 30) {
       System.out.println("К сожалнению, такой суммы денег в банкомате нет, либо желаемая купюра не поддерживается. Попробуйте ввести другую сумму денег или купюру.");

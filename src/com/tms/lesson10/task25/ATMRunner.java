@@ -5,9 +5,10 @@ public class ATMRunner {
     ATM userTry = new ATM(5, 5, 2);
     userTry.getTotalMoney();
     userTry.addMoney(20);
-    userTry.addMoney(20);
-    userTry.addMoney(50);
-    userTry.addMoney(100);
+    userTry.addMoney(195);
+    userTry.addMoney(30);
+    userTry.addMoney(210);
+    userTry.addMoney(430);
     userTry.getTotalMoney();
     userTry.cashWithdrawal(330);
     userTry.getResult();

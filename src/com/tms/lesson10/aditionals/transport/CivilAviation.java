@@ -1,6 +1,6 @@
 package com.tms.lesson10.aditionals.transport;
 
-public class CivilAviation extends Air {
+public class CivilAviation extends AirTransport {
   private int numberOfPassengerSeats;
   boolean businessClass;
 

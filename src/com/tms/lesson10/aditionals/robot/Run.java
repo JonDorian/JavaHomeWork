@@ -14,17 +14,17 @@ public class Run {
         У всех роботов вызовите метод action.
         Среди 3-х роботов найдите самого дорогого.
         */
-    SamsungHead samsungHead = new SamsungHead(70);
-    SamsungHand samsungHand = new SamsungHand(33);
-    SamsungLeg samsungLeg = new SamsungLeg(43);
+    IHead samsungHead = new SamsungHead(70);
+    IHand samsungHand = new SamsungHand(33);
+    ILeg samsungLeg = new SamsungLeg(43);
 
-    SonyHead sonyHead = new SonyHead(80);
-    SonyHand sonyHand = new SonyHand(44);
-    SonyLeg sonyLeg = new SonyLeg(21);
+    IHead sonyHead = new SonyHead(80);
+    IHand sonyHand = new SonyHand(44);
+    ILeg sonyLeg = new SonyLeg(21);
 
-    ToshibaHead toshibaHead = new ToshibaHead(60);
-    ToshibaHand toshibaHand = new ToshibaHand(15);
-    ToshibaLeg toshibaLeg = new ToshibaLeg(35);
+    IHead toshibaHead = new ToshibaHead(60);
+    IHand toshibaHand = new ToshibaHand(15);
+    ILeg toshibaLeg = new ToshibaLeg(35);
 
     Robot robotOne = new Robot("T-1000", samsungHead, toshibaHand, sonyLeg);
     Robot robotTwo = new Robot("T-800", sonyHead, samsungHand, toshibaLeg);

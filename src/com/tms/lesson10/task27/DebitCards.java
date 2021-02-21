@@ -1,7 +1,13 @@
 package com.tms.lesson10.task27;
 
 public abstract class DebitCards extends BankCards {
-  public void getInforming() {
-    System.out.println("Баланс карты " + getPaymentSystem() + " " + getStatus() + " от банка " + getBankName() + " на текущий момент составляет: " + getBalance());
+  private boolean smsInforming;
+
+ public void setSmsInforming(boolean smsInforming) {
+  this.smsInforming = smsInforming;
+ }
+
+ public void getSmsInforming(){
+   System.out.println("Функция SMS информирования: " + smsInforming);
   }
 }

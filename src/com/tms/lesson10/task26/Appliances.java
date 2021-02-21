@@ -7,23 +7,23 @@ public abstract class Appliances {
   public String color;
   public String name;
   public String brand;
-  boolean turnOnOrOf = false;
+  boolean turnOn = false;
 
   public void powerOn() {
-    if (!turnOnOrOf) {
+    if (!turnOn) {
       System.out.println(color + " " + name + " " + brand + " включен(а)! и работает отлично!!!");
     } else {
       System.out.println("Чувак! " + name + " " + brand + " уже включен!!");
     }
-    turnOnOrOf = true;
+    turnOn = true;
   }
 
   public void powerOf() {
-    if (turnOnOrOf) {
+    if (turnOn) {
       System.out.println(color + " " + name + " " + brand + " выключен(а)! и соседи больше не жалуются на его громкую работу!");
     } else {
       System.out.println("Чувак! " + name + " " + brand + " и так выключен!!");
     }
-    turnOnOrOf = false;
+    turnOn = false;
   }
 }

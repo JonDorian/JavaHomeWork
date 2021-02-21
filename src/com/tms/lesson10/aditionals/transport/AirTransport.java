@@ -1,6 +1,6 @@
 package com.tms.lesson10.aditionals.transport;
 
-public abstract class Air extends Transport {
+public abstract class AirTransport extends Transport {
   private float wingspan;
   private int minimumLengthRunwayStrip;
 

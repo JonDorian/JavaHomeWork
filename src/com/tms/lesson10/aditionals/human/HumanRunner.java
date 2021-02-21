@@ -6,17 +6,17 @@ import com.tms.lesson10.aditionals.human.clothes.shoes.*;
 
 public class HumanRunner {
   public static void main(String[] args) {
-    Parka parka = new Parka();
-    SportJacket sportJacket = new SportJacket();
-    Windbreaker windbreaker = new Windbreaker();
+    IJacket sportJacket = new SportJacket();
+    IJacket parka = new Parka();
+    IJacket windbreaker = new Windbreaker();
 
-    Jeans jeans = new Jeans();
-    SportTrousers sportTrousers = new SportTrousers();
-    Trousers trousers = new Trousers();
+    IPants jeans = new Jeans();
+    IPants sportTrousers = new SportTrousers();
+    IPants trousers = new Trousers();
 
-    Sandals sandals = new Sandals();
-    Slippers slippers = new Slippers();
-    Sneakers sneakers = new Sneakers();
+    IShoes sandals = new Sandals();
+    IShoes slippers = new Slippers();
+    IShoes sneakers = new Sneakers();
 
     Human anton = new Human("Антошка", parka, jeans, sneakers);
     Human denis = new Human("Денис", sportJacket, trousers, sandals);
