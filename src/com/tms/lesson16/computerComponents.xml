@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<devices>
+  <component id = "Z3343">
+    <name>Видеокарта</name>
+    <country>Китай</country>
+    <price currency="BLR">
+      <cost>20</cost>
+    </price>
+    <type>
+      <peripheral>true</peripheral>
+      <energy-consumption>200</energy-consumption>
+      <cooler-available>true</cooler-available>
+      <components-group>вычислительное устройство</components-group>
+      <ports>DDR5</ports>
+      <critical>false</critical>
+    </type>
+  </component>
+  <component id = "F99142">
+    <name>Видеокарта</name>
+    <country>Китай</country>
+    <price currency="BLR">
+      <cost>20</cost>
+    </price>
+    <type>
+      <peripheral>true</peripheral>
+      <energy-consumption>200</energy-consumption>
+      <cooler-available>true</cooler-available>
+      <components-group>вычислительное устройство</components-group>
+      <ports>DDR5</ports>
+      <critical>false</critical>
+    </type>
+  </component>
+</devices>
